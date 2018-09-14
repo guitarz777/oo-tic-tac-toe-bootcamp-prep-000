@@ -116,7 +116,7 @@ class TicTacToe
   def play
     turns = 1
     until turns > 9 || over?
-      turns
+      turn
       turns += 1
     end
     if draw?
