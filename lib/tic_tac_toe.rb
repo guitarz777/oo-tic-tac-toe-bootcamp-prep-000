@@ -83,46 +83,46 @@ class TicTacToe
     return false
   end 
   
-  def full?(board)
-    if board.detect{|position| position == "" || position == " "}
+  def full?(@board)
+    if @board.detect{|position| position == "" || position == " "}
       return false
     else
       return true 
     end
   end
 
-  def draw?(board)
-    if full?(board) && !won?(board)
+  def draw?(@board)
+    if full?(@board) && !won?(@board)
       return true
     else
       return false 
     end
   end
 
-  def over?(board)
-    if draw?(board) || won?(board)
+  def over?(@board)
+    if draw?(@board) || won?(@board)
       return true
     else
       return false
     end
   end
 
-  def winner(board)
-    if won?(board)
-      return board[won?(board)[0]]
+  def winner(@board)
+    if won?(@board)
+      return @board[won?(@board)[0]]
     end
   end
 
-  def play(board)
+  def play(@board)
     turn = 1
-    until turn > 9 || over?(board)
-      turn(board)
+    until turn > 9 || over?(@board)
+      turn(@board)
       turn += 1
     end
-    if draw?(board)
+    if draw?(@board)
       puts "Cat's Game!"
-    elsif won?(board)
-      puts "Congratulations #{winner(board)}!"
+    elsif won?(@board)
+      puts "Congratulations #{winner(@board)}!"
     end
   end
 end
