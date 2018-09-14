@@ -114,10 +114,10 @@ class TicTacToe
   end
 
   def play
-    turn = 1
-    until turn > 9 || over?
-      turn
-      turn += 1
+    turns = 1
+    until turns > 9 || over?
+      turns
+      turns += 1
     end
     if draw?
       puts "Cat's Game!"
